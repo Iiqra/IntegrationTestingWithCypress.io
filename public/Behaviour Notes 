@@ -1,0 +1,10 @@
+Possible bugs or Known Issues 
+
+[IA001]
+1. While controling image visibility from the breakpoint adjustment, left image to left-most visible images is always visible, whereas it should not. 
+   e.g. 
+   - There are 7 images in the slider in the right sequence.  Img1, Img2, ..., Img7 
+   - Expected: Only Img1-Img2-Img3 are expected to be visible within the given breakpoint.
+   - Actual:  Img7 is also visible which is not expected    
+
+2. While controling image visibility from the dots, image visibility behaviour is the same except the TC5 and TC6 where both the right to the right-most and left to the lef-most images are visble, whereas they should not be visible.   

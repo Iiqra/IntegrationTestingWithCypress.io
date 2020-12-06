@@ -1,0 +1,13 @@
+{
+    "baseUrl": "http://localhost:3000",
+    "defaultCommandTimeout": 6000,
+    "viewportHeight": 1000,
+    "viewportWidth":639,
+
+    "env": {
+        "mobileViewportwidth": 639,  
+        "monitorViewportWidth": 767,
+        "testViewportWidth": 199 , 
+        "testViewportHeight": 1000        
+      }
+}
