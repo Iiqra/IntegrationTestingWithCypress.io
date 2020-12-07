@@ -1,20 +1,23 @@
+/**** --- COMMENTS --- ****
+  - Where there are no viewport explicit setting, the default viewport setting will be used from cypress.json variable file. 
+  - The within test commented line show a bug (know issue), thereofe, I left them commented. 
+  - I have not added many explicit visibility checks within these tests because of the same issue (IA001)*/
+
 describe('Integration tests for React Leaf Carousel', () => {
     beforeEach(() => {
       cy.visit('/')
     })
 
-    // add param and dataset
    context('Testing if correct number of visible images in the given breakpoint', function() {
       it('TC01- it should display only 1 images within 200 breakpoint', () => {
         cy.viewport(Cypress.env('testViewportWidth'), Cypress.env('testViewportHeight'))
          
          // TODO: IA001 - Possible bug / Known issue !
          //cy.get('[alt="Image7"]').should('not.be.visible')
+         cy.get('[alt="Image3"]').should('not.be.visible')
          cy.get('[alt="Image1"]').should('be.visible')
          cy.get('[alt="Image2"]').should('not.be.visible')
-         //cy.get('[alt="Image3"]').should('not.be.visible')
          cy.get('[alt="Image6"]').should('not.be.visible')
-
       })
 
       it('TC02- it should display only 2 images within 640 breakpoint', () => {
@@ -80,12 +83,26 @@ describe('Integration tests for React Leaf Carousel', () => {
       })
    }) 
    
-   context('TC09- Testing arrow buttons functionality', function (){
-   it('Testing if correct events trigger', () => {
-    // wait for el to be clickable - here event can be listened - > 
-      cy.get('[name="infinite-carousel-button-next"]').should('be.visible').trigger('onNextClick')
-      cy.get('[name="infinite-carousel-button-previous"]').should('be.visible').trigger('onPreviousClick')
+   context('Testing arrow buttons functionality', function (){           
 
+      it('TC09- Testing if correct events trigger', () => {
+      
+         cy.get('[alt="Image1"]').should('be.visible')  
+      cy.get('[alt="Image2"]').should('be.visible')
+      cy.get('[name="infinite-carousel-button-next"]').click()
+      cy.get('[alt="Image3"]').should('be.visible')  
+      cy.get('[alt="Image4"]').should('be.visible')
+      .wait(300)      
+      //TOREVIST: pipe.click() failed passing
+      //const click = $el => $el.click
+      // cy.get('[name="infinite-carousel-button-previous"]').should('be.visible')
+      // .pipe(click).should(i => {
+      // expect(cy.get('[alt="Image4"]')).to.not.visible
+      // })
+      
+      cy.get('[name="infinite-carousel-button-previous"]').click()
+      cy.get('[alt="Image1"]').should('be.visible')  
+      cy.get('[alt="Image2"]').should('be.visible')
     })
    })
 }) // global describe closure
