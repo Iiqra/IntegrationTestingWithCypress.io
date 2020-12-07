@@ -15,7 +15,6 @@ Following are the prompt know issues or bugs which I came across during testing.
 - At multiple button click the slider images are shown vertically. Screenshots are attached for clarity! 
 
 ![images are showm vertically](images/B-002a.png)
-![images are showm vertically](images/B-002b.png)
 
 >[IA003]
 - Incorrect number of images are present in the div.
