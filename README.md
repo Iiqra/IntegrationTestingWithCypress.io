@@ -37,4 +37,12 @@ $ npm run cypress
 4. Run Tests  
 After step3, the Cypress runner will launch and you can run `.spec.js` test files from the Cypress launched interface
 
+![cypress interface](deliverables/images/CypressUI.png?raw=true)
+
+5. Result
+Here is the test execution results of test cases 
+![results](deliverables/images/PassedTestcases.png?raw=true)
+
+
+
 
