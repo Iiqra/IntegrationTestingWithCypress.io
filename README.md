@@ -6,7 +6,8 @@ This repository contains the code to test react leaf carousel using cypress.io
 [Node](https://nodejs.org/en/download/)  
 Cypress  
 An IDE or Terminal  
-Chrome Browser
+Chrome Browser  
+[Cypress pipe for click functionality](https://www.npmjs.com/package/cypress-pipe?activeTab=readme)
 
 ## Project Structure 
 > All .js files *such as* `careousel.js`, `App.js`, `index.js` are in **src** folder  
@@ -31,10 +32,19 @@ $ npm run build
 ```
 3. Open & run Cypress runner for Scripts execution 
 ``` sh
+$ npm install cypress-pipe -D
 $ node_modules/.bin/cypress open
 $ npm run cypress
 ```
 4. Run Tests  
 After step3, the Cypress runner will launch and you can run `.spec.js` test files from the Cypress launched interface
+
+![cypress interface](deliverables/images/CypressUI.png?raw=true)
+
+5. Result
+Here is the test execution results of test cases 
+![results](deliverables/images/PassedTestcases.png?raw=true)
+
+
 
 
